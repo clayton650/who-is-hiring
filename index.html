@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+	<title>Who is hiring? | Hacker News</title>
+
+	<link rel="shortcut icon" href="asset/image/favicon-child.ico">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand reset" href="#"><span><i class="fa fa-child""></i></span> Who is hiring?</a>
+    <ul class="nav navbar-nav filter">
+        <li data-filter="all" class="active">
+        	<a href="#">Browse
+						<span type="button" class="glyphicon glyphicon-share-alt util link hn-orange"></span>
+        	</a>
+      	</li>
+        <li data-filter="favorite" >
+        	<a href="#">Favorites 
+        		<span class="badge"> 0</span>
+        		<span type="button" class="glyphicon glyphicon-trash util" data-action="reset-favorites" data-toggle="popover" title="Clear your favorites?" data-content="<button type='button' class='btn btn-default util'>Close</button><button type='button' class='btn btn-warning util' data-action='delete'>Delete</button>" data-html="true" data-placement="bottom"></span>
+        	</a>
+      	</li>
+    </ul> 
+  </div>
+</nav>
+<main class="container-fluid">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="row">
+				<nav id="comment-filter">
+						<form class="form-inline navbar-form navbar-left">
+							<div class="form-group pull-left">
+								<input type="search" class="form-control" id="keyword-input" placeholder="Keyword Filter...">
+								<span id="clear-keyword-input" class="glyphicon glyphicon-remove-circle clear-input"></span>
+								<button type="button" class="btn btn-default" id="keyword-button" ><span class="glyphicon glyphicon-filter"></span></button>
+							</div>
+							<span class="btn-separator"></span>
+							<div class="form-group pull-left select-wrapper">
+								<select id="commentGroup" class="form-control col-md-2">
+									<option data-date-title="all">All Dates</option>
+								  <!-- Comment options injected here -->
+								</select>
+							</div>
+							<span class="btn-separator"></span>
+							<div id="groupType" class="form-group btn-group pull-left" role="group">
+								<button type="button" class="btn btn-default" data-group-type="all">All</button>
+								<button type="button" class="btn btn-default active" data-group-type="jobs">Jobs</button>
+								<button type="button" class="btn btn-default" data-group-type="freelancers">Freelancers</button>
+							</div>
+							<span class="btn-separator"></span>
+							<div class="form-group pull-left filter">
+								<!-- <div class="btn-group " role="group">
+									<button type="button" class="btn btn-warning" data-filter="flag"><span class="glyphicon glyphicon-flag"></span></button>
+								</div> -->
+								<div class="btn-group" role="group">
+									<a type="button" class="btn reset hn-orange"><span class="glyphicon glyphicon-refresh"></span></a>
+								</div>
+							</div>
+			  		</form>
+			  </nav>
+				<section id="comments" class="col-md-12">
+					<ul>
+						<!-- comments are loaded here -->
+					</ul>
+					<div id="loaderWrapper" class="text-center"><i class="fa  fa-circle-o-notch fa-3x fa-spin"></i></div>
+				</section>
+			</div>
+		</div>
+		<aside id="controls" class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <form id="wiki" class="form-inline">
+						<input type="search" class="form-control" id="wiki-input" placeholder="Search Wikipedia">
+						<span id="clear-search-input" class="glyphicon glyphicon-remove-circle clear-input"></span>
+						<button type="submit" class="btn btn-default" id="wiki-button" ><i class="fa fa-wikipedia-w" aria-hidden="true"></i></button>
+					<form>
+				</div>
+			  <div id="wiki-results" class="panel-body">
+			    <!-- This is where wikipedia results are loaded -->
+			  </div>
+			</div>
+		</aside>
+	</div>
+</main>
+<footer>
+	<p class="muted">Who is hiring? &copy; 2018 | Content provided by <a href="https://news.ycombinator.com/submitted?id=whoishiring" class="hn-orange" target="_blank"> Hacker News</a></p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script type="text/javascript" src="asset/js/vendor/moment.js"></script>
+<script type="text/javascript" src="asset/js/vendor/jquery.waypoints.min.js"></script>
+<script type="text/javascript" src="asset/js/util.js"></script>
+<script type="text/javascript" src="asset/js/wiki.js"></script>
+<script type="text/javascript" src="asset/js/comment.js"></script>
+<script type="text/javascript" src="asset/js/app.js"></script>
+<script type="text/javascript" src="asset/js/index.js"></script>>
+
+</body>
+</html>
+
+
+
+

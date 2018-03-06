@@ -1,0 +1,262 @@
+/* App Styles Below
+-------------------------------------------------- */
+
+html, body {
+  background-color: #ffffff;
+
+}
+
+/* Wrapper for page content to push down footer */
+main {
+  margin: 36px auto -60px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #FC6621;
+}
+
+footer p{
+  padding: 2px 20px 2px 10px;
+  margin: 0;
+}
+
+/* Misc */
+.muted {
+    color: #999999;
+}
+
+.hn-orange{
+  color: #FC6621;
+}
+
+input, button, .alert, .panel, a.btn {
+  border-radius: 0 !important;
+  -webkit-appearance: none !important;
+}
+
+/*For testing waypoint tracking element */
+/*.track{
+  background-color: yellow;
+}*/
+
+#loaderWrapper{
+  margin: 20px 0 40px;
+}
+
+/* Nav Bar */
+
+nav.navbar{
+  border-bottom: 2px solid #FC6621;
+  min-height: auto;
+  height: auto;
+}
+
+.navbar .navbar-brand{
+    background-color: #FC6621 !important;
+    color: #ffffff !important;
+
+}
+
+nav .navbar-brand{
+  padding: 6px;
+  height: auto;
+}
+
+nav ul.navbar-nav li a{
+  padding: 7px;
+  height: auto;
+}
+
+nav .navbar-brand span{
+  border: 1px solid #ffff;
+}
+
+nav .navbar-brand i {
+  margin: 2px 5px 2px 5px;
+}
+
+nav .filter, nav .navbar-form{
+  visibility: hidden;
+}
+
+nav#comment-filter{
+  position: fixed;
+  z-index: 100;
+  width: 67%; /*work around for bootstrap grid issue */
+  background-color: #f6f6ef;
+  border-bottom: 1px solid #FC6621;
+}
+
+
+.filter .glyphicon{
+  top: 3px;
+}
+
+.filter .glyphicon-trash{
+  color: #FC6621;
+}
+
+
+.filter .glyphicon-trash.disabled{
+  color: #777
+}
+
+.filter .glyphicon-trash.disabled{
+  cursor: not-allowed;
+}
+
+
+/*.filter .badge{
+  background-color: #419641;
+}*/
+
+
+.btn-separator:after {
+    content: ' ';
+    display: block;
+    float: left;
+    background: #ADADAD;
+    margin: 0 10px;
+    height: 34px;
+    width: 1px;
+}
+
+select#commentGroup{
+  width: 125px;
+}
+
+/** delete favorites popover css adjustments **/
+[data-action="reset-favorites"] + .popover{
+  width: 180px;
+}
+
+[data-action="reset-favorites"] + .popover .popover-content button{
+  margin: 5px;
+}
+
+[data-action="reset-favorites"] + .popover .popover-title{
+  text-align: center;
+}
+
+.clear-input{
+  visibility: hidden;
+  cursor: pointer;
+  left: -25px;
+  top: 3px;
+  margin-right: -8px;
+}
+  
+
+
+/* Comment list */
+
+#comments{
+  padding: 0; 
+  margin-top: 50px; 
+}
+
+#comments ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0 10px;
+}
+
+#comments li.comment{
+  background-color: #f6f6ef;
+  border-bottom: 1px solid #ADADAD;
+  padding: 20px 0 10px 0;
+}
+
+#comments li.comment:last-child{
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+#comments aside ul{
+  padding: 10px 0 0 0;
+}
+
+#comments aside ul a{
+  text-decoration: underline;
+  color: #FC6621;
+}
+
+#comments article.closed{
+  max-height: 150px;
+  overflow: hidden;
+}
+#comments article.opened{
+  height: inherit;
+  overflow: inherit;
+}
+
+#comments .toggle-comment{
+  text-align: center;
+  cursor: pointer;
+  color: #ADADAD;
+}
+
+/* Aside */
+
+aside#controls{
+  position: fixed;
+  top: 36px;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding-top: 10px;
+}
+
+aside .panel-body{
+  padding: 5px;
+}
+    
+aside .panel-group{
+  margin-bottom: 0px;
+}
+
+aside .panel .panel-heading{
+  background-image: linear-gradient(to bottom,#f5f5f5 0,#f6f6ef 100%);
+}
+
+/* Alerts */
+.alert{
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.alert.fixed{
+  position: fixed;
+  /*jquery used to show*/
+  /*display: block;*/
+  top: 20px;
+  z-index: 10000;
+  right: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#comments .alert{
+  width: 300px;
+  margin: 20px auto 0 auto;
+}
+  
+
+
+/* Wikipedia Sidebar */
+
+#wiki-input{
+  width: 82%;
+}
+
+#wiki-button{
+  width: 13%;
+}
+
+
+
