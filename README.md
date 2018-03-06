@@ -22,4 +22,4 @@ cd who-is-hiring
 open index.html
 ```
 
-**Help, maintenance, and contributer:** claytonhthompson@gmail.com
+**Help, maintenance, and contributor:** claytonhthompson@gmail.com
